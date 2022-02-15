@@ -10,15 +10,6 @@ namespace LetsBaseball
     public class Dispatcher : MonoBehaviour
     {
         public static int tID = 0;
-        public static void RunAsync(Action action)
-        {
-            ThreadPool.QueueUserWorkItem(o => action());
-        }
-
-        public static void RunAsync(Action<object> action, object state)
-        {
-            ThreadPool.QueueUserWorkItem(o => action(o), state);
-        }
 
         public static void RunOnMainThread(Func<UniTask> action)
         {
