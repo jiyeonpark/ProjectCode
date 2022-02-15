@@ -3,24 +3,6 @@ using UnityEngine;
 
 namespace LetsBaseball.Network.Http
 {
-    public class Payload
-    {
-        public WCS.Network.wce_err code { get; set; }
-    }
-
-    public class Payload<T> : Payload
-    {
-        public T data { get; set; }
-    }
-
-    public static class PayloadPack
-    {
-        public static object[] Success<T>(T data)
-        {
-            return new object[] { WCS.Network.wce_err.none, data };
-        }
-    }
-
     public class Payloader
     {
         private Action<WCS.Network.wce_err> fail;
